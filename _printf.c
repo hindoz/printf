@@ -2,7 +2,7 @@
 
 int _printf(const char *format, ...);
 int main_printf(const char *format, va_list ptr, buf_t *output);
-void cleanup(va_list ptr, buf_t *output)
+void clean_up(va_list ptr, buf_t *output)
 
 /**
  * _printf - print its arguments based on the specifier.
