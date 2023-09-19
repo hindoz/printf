@@ -2,6 +2,7 @@
 
 int _printf(const char *format, ...);
 int main_printf(const char *format, va_list ptr, buf_t *output);
+void cleanup(va_list ptr, buf_t *output)
 
 /**
  * _printf - print its arguments based on the specifier.
@@ -54,13 +55,13 @@ int main_printf(const char *format, va_list ptr, buf_t *output)
 			width = test_width(ptr, format + i + tmp + 1, &tmp);
 			prec = test_precision(ptr, format + i + tmp + 1, &tmp);
 
-			length = handle_length(format + i + tmp + 1, &tmp);
+			length = test_length(format + i + tmp + 1, &tmp);
 
 			f = test_specifiers(format + i + tmp + 1);
 			if (f != NULL)
 			{
 				i += tmp + 1;
-				ret += f(ptr, output, flag, width, prec, length);
+				retrn_value += f(ptr, output, flag, width, prec, length);
 				continue;
 			}
 			else if (*(format + i + tmp + 1) == '\0')
@@ -69,9 +70,21 @@ int main_printf(const char *format, va_list ptr, buf_t *output)
 				break;
 			}
 		}
-		retrn_value += _memcpy(output, (format + i), 1);
+		retrn_value += mem_cpy(output, (format + i), 1);
 		i += (length != 0) ? 1 : 0;
 	}
-	cleanup(args, output);
+	clean_up(ptr, output);
 	return (retrn_value);
+}
+
+/**
+ * clean_up - Peforms cleanup operations for _printf.
+ * @ptr: va_list of arguments provided to _printf.
+ * @output:  buf_t struct.
+ */
+void clean_up(va_list ptr, buf_t *output)
+{
+	va_end(ptr);
+	write(1, output->start, output->length);
+	free_buf(output);
 }
