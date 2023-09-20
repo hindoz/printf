@@ -1,4 +1,4 @@
-#incude"main.h"
+#include"main.h"
 
 void free_buf(buf_t *output);
 buf_t *locate_size(void);

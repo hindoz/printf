@@ -4,7 +4,7 @@ unsigned int test_di(va_list ptr, buf_t *output, unsigned char flag,
 		int width, int prec, unsigned char length);
 unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag,
 		int width, int prec, unsigned char length);
-unsigned int test _b(va_list ptr, buf_t *output, unsigned char flag,
+unsigned int test_b(va_list ptr, buf_t *output, unsigned char flag,
 		int width, int prec, unsigned char length);
 unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag,
 		int width, int prec, unsigned char length);
@@ -20,7 +20,7 @@ unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag,
  *
  * Return: number of bytes stored to the buffer.
  */
-unsigned int test_di(va_list test, buf_t *output,
+unsigned int test_di(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length)
 {
 	long int d, copy;

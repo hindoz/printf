@@ -5,6 +5,8 @@
 #include<stdarg.h>
 #include<string.h>
 #include<unistd.h>
+#include<stdlib.h>
+#include <limits.h>
 
 /**
  * struct buffer_s - A new type defining a buffer struct.
@@ -102,11 +104,11 @@ unsigned int test_ubase(buf_t *output, unsigned long int num, char *base,
 #define HASH 4
 #define ZERO 8
 #define NEG 16
-#define PLUS_FLAG (flags & 1)
-#define SPACE_FLAG ((flags >> 1) & 1)
-#define HASH_FLAG ((flags >> 2) & 1)
-#define ZERO_FLAG ((flags >> 3) & 1)
-#define NEG_FLAG ((flags >> 4) & 1)
+#define PLUS_FLAG (flag & 1)
+#define SPACE_FLAG ((flag >> 1) & 1)
+#define HASH_FLAG ((flag >> 2) & 1)
+#define ZERO_FLAG ((flag >> 3) & 1)
+#define NEG_FLAG ((flag >> 4) & 1)
 
 #define SHORT 1
 #define LONG 2
