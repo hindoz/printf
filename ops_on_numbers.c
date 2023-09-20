@@ -57,10 +57,10 @@ unsigned int test_di(va_list ptr, buf_t *output,
 			retrn_value += mem_cpy(output, &plus, 1);
 		/*Print negative sign when zero flag is active */
 		if (ZERO_FLAG == 1 && d < 0)
-			retrn_valuet += mem_cpy(output, &neg, 1);
+			retrn_value += mem_cpy(output, &neg, 1);
 
 		pad = (ZERO_FLAG == 1) ? '0' : ' ';
-		for (width -= count; wid > 0; wid--)
+		for (width -= count; width > 0; width--)
 			retrn_value += mem_cpy(output, &pad, 1);
 	}
 
@@ -166,7 +166,7 @@ unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag,
 		retrn_value += mem_cpy(output, &zero, 1);
 
 	if (!(num == 0 && prec == 0))
-		retrn_valuet += convert_ubase(output, num, "01234567", flag, width, prec);
+		retrn_value += test_ubase(output, num, "01234567", flag, width, prec);
 
 	retrn_value += print_neg_width(output, retrn_value, flag, width);
 

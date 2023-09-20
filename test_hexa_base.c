@@ -109,7 +109,7 @@ unsigned int test_sbase(buf_t *output, long int num, char *base,
 
 	if (num >= size || num <= -size)
 		retr += test_sbase(output, num / size, base,
-				flag, wid - 1, prec - 1);
+				flag, width - 1, prec - 1);
 
 	else
 	{

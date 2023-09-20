@@ -2,7 +2,7 @@
 
 int _printf(const char *format, ...);
 int main_printf(const char *format, va_list ptr, buf_t *output);
-void clean_up(va_list ptr, buf_t *output)
+void clean_up(va_list ptr, buf_t *output);
 
 /**
  * _printf - print its arguments based on the specifier.
@@ -39,9 +39,9 @@ int _printf(const char *format, ...)
  */
 int main_printf(const char *format, va_list ptr, buf_t *output)
 {
-	int i, retrn_value = 0;
+	int i, retrn_value = 0, prec, width;
 	char tmp;
-	unsigned char length;
+	unsigned char length, flag;
 	unsigned int (*f)(va_list, buf_t *,
 			unsigned char, int, int, unsigned char);
 

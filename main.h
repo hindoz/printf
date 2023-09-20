@@ -26,7 +26,7 @@ typedef struct buffer_s
  * @specifier: character representing a conversion specifier.
  * @func: pointer to a conversion function corresponding to specifier.
  */
-typedef struct test_s
+typedef struct converter_s
 {
 	unsigned char specifier;
 	unsigned int (*func)(va_list, buf_t *,

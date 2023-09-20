@@ -1,6 +1,6 @@
 #include "main.h"
 
-unsigned int test_s(va_list ptr, buf_t *output,
+unsigned int test_st(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
 unsigned int test_S(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
@@ -10,7 +10,7 @@ unsigned int test_R(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
 
 /**
- * test_s - Converts an argument to a string
+ * test_st - Converts an argument to a string
  * @ptr: va_list pointing to the argument to be converted.
  * @flag: Flag modifiers.
  * @width:  width modifier.
@@ -20,7 +20,7 @@ unsigned int test_R(va_list ptr, buf_t *output,
  *
  * Return:  number of bytes stored to the buffer.
  */
-unsigned int test_s(va_list ptr, buf_t *output,
+unsigned int test_st(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length)
 {
 	char *str, *null = "(null)";

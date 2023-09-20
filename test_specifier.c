@@ -6,7 +6,8 @@ unsigned char test_flags(const char *flag, char *index);
 int test_precision(va_list ptr, const char *modifier, char *index);
 unsigned char test_length(const char *modifier, char *index);
 int test_width(va_list ptr, const char *modifier, char *index);
-
+unsigned int test_st(va_list ptr, buf_t *output,
+		unsigned char flag, int width, int prec, unsigned char length);
 /**
  * test_specifiers - Matches format specifier with
  *                     a corresponding conversion function.
@@ -24,7 +25,7 @@ unsigned int (*test_specifiers(const char *specifier))(va_list, buf_t *,
 	int i;
 	test_t converters[] = {
 		{'c', test_c},
-		{'s', test_s},
+		{'s', test_st},
 		{'d', test_di},
 		{'i', test_di},
 		{'%', test_percent},
