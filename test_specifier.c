@@ -17,7 +17,7 @@ unsigned int test_st(va_list ptr, buf_t *output,
  * Return: If a conversion function is matched - a pointer to the function.
  *         Otherwise - NULL.
  *
- *Description: this function will compare argument with those given specifiers
+ * Description: this function will compare argument with those given specifiers
  */
 unsigned int (*test_specifiers(const char *specifier))(va_list, buf_t *,
 		unsigned char, int, int, unsigned char)
