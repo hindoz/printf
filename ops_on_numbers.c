@@ -1,9 +1,13 @@
 #include"main.h"
 
-unsigned int test_di(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length);
-unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length);
-unsigned int test _b(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length);
-unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length);
+unsigned int test_di(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length);
+unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length);
+unsigned int test _b(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length);
+unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length);
 
 /**
  * test_di - Converts an argument to a signed int
@@ -88,7 +92,8 @@ unsigned int test_di(va_list test, buf_t *output,
  *
  * Return: The number of bytes stored to the buffer.
  */
-unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length)
+unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length)
 {
 	unsigned long int num;
 	unsigned int retrn_value = 0;
@@ -120,7 +125,8 @@ unsigned int test_u(va_list ptr, buf_t *output, unsigned char flag, int width, i
  *
  * Return: The number of bytes stored to the buffer.
  */
-unsigned int test_b(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length)
+unsigned int test_b(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length)
 {
 	unsigned int num;
 
@@ -142,7 +148,8 @@ unsigned int test_b(va_list ptr, buf_t *output, unsigned char flag, int width, i
  *
  * Return: The number of bytes stored to the buffer.
  */
-unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag, int width, int prec, unsigned char length)
+unsigned int test_o(va_list ptr, buf_t *output, unsigned char flag,
+		int width, int prec, unsigned char length)
 {
 	unsigned long int num;
 	unsigned int retrn_value = 0;

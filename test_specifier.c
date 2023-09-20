@@ -1,7 +1,7 @@
 #include"main.h"
 
 unsigned int (*test_specifiers(const char *specifier))(va_list, buf_t *,
-                unsigned char, int, int, unsigned char);
+		unsigned char, int, int, unsigned char);
 unsigned char test_flags(const char *flag, char *index);
 int test_precision(va_list ptr, const char *modifier, char *index);
 unsigned char test_length(const char *modifier, char *index);
@@ -11,9 +11,12 @@ int test_width(va_list ptr, const char *modifier, char *index);
  * test_specifiers - Matches format specifier with
  *                     a corresponding conversion function.
  * @specifier:  pointer to a potential conversion specifier.
- *
+ * @int : int number
+ * @char : any character
  * Return: If a conversion function is matched - a pointer to the function.
  *         Otherwise - NULL.
+ *
+ *Description: this function will compare argument with those given specifiers
  */
 unsigned int (*test_specifiers(const char *specifier))(va_list, buf_t *,
 		unsigned char, int, int, unsigned char)

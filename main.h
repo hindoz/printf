@@ -6,7 +6,13 @@
 #include<string.h>
 #include<unistd.h>
 
-typedef struct buffer 
+/**
+ * struct buffer_s - A new type defining a buffer struct.
+ * @buf:  pointer to a character array.
+ * @start:  pointer to the start of buffer.
+ * @length:  length of the string stored in buffer.
+ */
+typedef struct buffer_s
 {
 	char *buf;
 	char *start;
@@ -42,29 +48,29 @@ buf_t *locate_size(void);
 
 unsigned int test_c(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_s(va_list ptr, buf_t *output,
+unsigned int testt_s(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_di(va_list ptr, buf_t *output,
+unsigned int test_di(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_percent(va_list ptr, buf_t *output,
+unsigned int test_percent(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_b(va_list ptr, buf_t *output,
+unsigned int test_b(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_u(va_list ptr, buf_t *output,
+unsigned int test_u(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_o(va_list ptr, buf_t *output,
+unsigned int test_o(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_x(va_list ptr, buf_t *output,
+unsigned int test_x(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_X(va_list ptr, buf_t *output,
+unsigned int test_X(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_S(va_list ptr, buf_t *output,
+unsigned int test_S(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_p(va_list ptr, buf_t *output,
+unsigned int test_p(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_r(va_list ptr, buf_t *output,
+unsigned int test_r(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
-unsigned int convert_R(va_list ptr, buf_t *output,
+unsigned int test_R(va_list ptr, buf_t *output,
 		unsigned char flag, int width, int prec, unsigned char length);
 
 unsigned char test_flags(const char *flag, char *index);
